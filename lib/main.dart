@@ -1,31 +1,35 @@
+import 'dart:io';  // Adicione essa importação
 import 'package:flutter/material.dart';
 import 'package:btc_for_all/screens/price_screen.dart';
 import 'package:btc_for_all/screens/news_screen.dart';
 import 'package:btc_for_all/screens/charts_screen.dart';
 import 'package:btc_for_all/screens/links_screen.dart';
 import 'package:btc_for_all/screens/about_screen.dart';
-import 'package:window_manager/window_manager.dart';
 import 'package:btc_for_all/screens/conversor_de_criptomoeda.dart';
 import 'package:btc_for_all/screens/calculadora_de_transacoes.dart';
 import 'package:btc_for_all/screens/historico_de_transacoes.dart'; // Importe o histórico de transações
 import 'package:btc_for_all/screens/estatisticas_de_rede.dart'; // Importar o novo widget
-import 'package:btc_for_all/screens/simulador_de_investimento.dart'; // Importe o simulador
+import 'package:btc_for_all/screens/simulador_de_investimento.dart';
+import 'package:window_manager/window_manager.dart'; // Importe o simulador
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await windowManager.ensureInitialized();
 
-  WindowOptions windowOptions = const WindowOptions(
-    size: Size(800, 600),
-    center: true,
-    backgroundColor: Colors.transparent,
-    skipTaskbar: false,
-  );
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.maximize();
-    await windowManager.show();
-    await windowManager.focus();
-  });
+  if (!Platform.isAndroid && !Platform.isIOS) {
+    await windowManager.ensureInitialized();
+
+    WindowOptions windowOptions = const WindowOptions(
+      size: Size(800, 600),
+      center: true,
+      backgroundColor: Colors.transparent,
+      skipTaskbar: false,
+    );
+    windowManager.waitUntilReadyToShow(windowOptions, () async {
+      await windowManager.maximize();
+      await windowManager.show();
+      await windowManager.focus();
+    });
+  }
 
   runApp(const MyApp());
 }

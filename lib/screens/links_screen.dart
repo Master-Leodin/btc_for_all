@@ -20,19 +20,25 @@ class LinksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: links.length,
-      itemBuilder: (context, index) {
-        final link = links[index];
-        return ListTile(
-          leading: link['image'] != ''
-              ? Image.asset(link['image']!, width: 80, height: 80)
-              : const Icon(Icons.link),
-          title: Text(link['title']!),
-          onTap: () => _openLink(link['url']!),
-          trailing: const Icon(Icons.open_in_new),
-        );
-      },
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Links Úteis'),
+      ),
+      body: SingleChildScrollView( // Adicionando o SingleChildScrollView
+        padding: const EdgeInsets.all(16.0),
+        child: Column( // Usando Column em vez de ListView.builder
+          children: links.map((link) {
+            return ListTile(
+              leading: link['image'] != ''
+                  ? Image.asset(link['image']!, width: 80, height: 80)
+                  : const Icon(Icons.link),
+              title: Text(link['title']!),
+              onTap: () => _openLink(link['url']!),
+              trailing: const Icon(Icons.open_in_new),
+            );
+          }).toList(),
+        ),
+      ),
     );
   }
 }

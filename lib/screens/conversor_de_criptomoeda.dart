@@ -97,85 +97,89 @@ class _ConversorDeCriptomoedaState extends State<ConversorDeCriptomoeda> {
             ? const Center(child: CircularProgressIndicator())
             : _errorMessage != null
             ? Center(child: Text(_errorMessage!))
-            : Column(
-          children: [
-            // RadioListTiles para selecionar o tipo de moeda
-            RadioListTile<String>(
-              title: const Text('Real (BRL)'),
-              value: 'real',
-              groupValue: _selectedCurrency,
-              onChanged: (value) {
-                setState(() {
-                  _selectedCurrency = value!;
-                });
-              },
-            ),
-            RadioListTile<String>(
-              title: const Text('USD'),
-              value: 'usd',
-              groupValue: _selectedCurrency,
-              onChanged: (value) {
-                setState(() {
-                  _selectedCurrency = value!;
-                });
-              },
-            ),
-            RadioListTile<String>(
-              title: const Text('BTC'),
-              value: 'btc',
-              groupValue: _selectedCurrency,
-              onChanged: (value) {
-                setState(() {
-                  _selectedCurrency = value!;
-                });
-              },
-            ),
-            TextField(
-              controller: _controller,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Digite o valor',
-                hintText: 'Digite o valor para converter',
+            : SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // RadioListTiles para selecionar o tipo de moeda
+              RadioListTile<String>(
+                title: const Text('Real (BRL)'),
+                value: 'real',
+                groupValue: _selectedCurrency,
+                onChanged: (value) {
+                  setState(() {
+                    _selectedCurrency = value!;
+                  });
+                },
               ),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _convertCurrency, // Chama a conversão ao clicar
-              child: const Text('Converter'),
-            ),
-            const SizedBox(height: 20),
-            // Exibe o valor convertido dependendo da seleção
-            _selectedCurrency == 'real'
-                ? SelectableText(
-              'Valor em Bitcoin (texto selecionável): ${_convertedValueBRL.toStringAsFixed(8)} BTC',
-              style: const TextStyle(fontSize: 20),
-            )
-                : _selectedCurrency == 'usd'
-                ? SelectableText(
-              'Valor em Bitcoin (texto selecionável): ${_convertedValueUSD.toStringAsFixed(8)} BTC',
-              style: const TextStyle(fontSize: 20),
-            )
-                : Column(
-              children: [
-                SelectableText(
-                  'Valor em BRL: ${_convertedValueBRL.toStringAsFixed(2)} BRL',
-                  style: const TextStyle(fontSize: 20),
+              RadioListTile<String>(
+                title: const Text('USD'),
+                value: 'usd',
+                groupValue: _selectedCurrency,
+                onChanged: (value) {
+                  setState(() {
+                    _selectedCurrency = value!;
+                  });
+                },
+              ),
+              RadioListTile<String>(
+                title: const Text('BTC'),
+                value: 'btc',
+                groupValue: _selectedCurrency,
+                onChanged: (value) {
+                  setState(() {
+                    _selectedCurrency = value!;
+                  });
+                },
+              ),
+              TextField(
+                controller: _controller,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: 'Digite o valor',
+                  hintText: 'Digite o valor para converter',
                 ),
-                const SizedBox(height: 10),
-                SelectableText(
-                  'Valor em USD: ${_convertedValueUSD.toStringAsFixed(2)} USD',
-                  style: const TextStyle(fontSize: 20),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _fetchValues,
-              child: const Text('Atualizar valores BTC'),
-            ),
-          ],
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _convertCurrency, // Chama a conversão ao clicar
+                child: const Text('Converter'),
+              ),
+              const SizedBox(height: 20),
+              _selectedCurrency == 'real'
+                  ? SelectableText(
+                'Valor em Bitcoin (texto selecionável): ${_convertedValueBRL.toStringAsFixed(8)} BTC',
+                style: const TextStyle(fontSize: 20),
+              )
+                  : _selectedCurrency == 'usd'
+                  ? SelectableText(
+                'Valor em Bitcoin (texto selecionável): ${_convertedValueUSD.toStringAsFixed(8)} BTC',
+                style: const TextStyle(fontSize: 20),
+              )
+                  : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SelectableText(
+                    'Valor em BRL: ${_convertedValueBRL.toStringAsFixed(2)} BRL',
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                  const SizedBox(height: 10),
+                  SelectableText(
+                    'Valor em USD: ${_convertedValueUSD.toStringAsFixed(2)} USD',
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _fetchValues,
+                child: const Text('Atualizar valores BTC'),
+              ),
+            ],
+          ),
         ),
       ),
+
     );
   }
 }

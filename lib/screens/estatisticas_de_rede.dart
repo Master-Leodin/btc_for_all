@@ -67,7 +67,7 @@ class _EstatisticasDeRedeState extends State<EstatisticasDeRede> {
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
-          : Padding(
+          : SingleChildScrollView(  // Adicionando o SingleChildScrollView
         padding: const EdgeInsets.all(16.0),
         child: _errorMessage.isNotEmpty
             ? Center(

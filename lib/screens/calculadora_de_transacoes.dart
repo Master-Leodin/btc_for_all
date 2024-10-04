@@ -112,7 +112,7 @@ class _CalculadoraDeTransacoesState extends State<CalculadoraDeTransacoes> {
       appBar: AppBar(
         title: const Text('Calculadora de Transações On-chain'),
       ),
-      body: Padding(
+      body: SingleChildScrollView( // Adicionado para evitar overflow
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
