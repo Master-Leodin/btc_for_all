@@ -140,7 +140,7 @@ class AboutScreen extends StatelessWidget {
                           'Vendendo doces por 2 anos (tive que aprender a vender) nos semáforos, comprei outro notebook (fraco), pois, além do que já\n'
                           'tinha me acontecido, tive TUDO roubado.\n\n'
                           'Sonho em, antes de sair em definitivo do Brazil, vizitar o Pará para ver se eu vejo as luzes de Colares da famosa "Operação Prato",\n '
-                          'mas como é caro e isolado a área, irei palo lado do Marajó.\n\n'
+                          'mas como é caro e isolado a área, irei pelo lado do Marajó.\n\n'
                           'Pretendo me estabelecer no Peru ou, se ganhar bastante, sudeste asiático, comida boa e custo de vida baixo.\n\n'
                           'Assim que me estabelecer fora, irei trazer meu irmão pra viver e trabalhar junto comigo, ele sofreu um golpe da barriga e está na pior.\n\n'
                           'Finalizando, o que eu ganhar em BTC, irá ficar parado (só comprarei o curso "Bitcoin BlackPill") nas carteiras e usar somente os reais.\n',

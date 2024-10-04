@@ -1,5 +1,8 @@
-import 'dart:io';  // Adicione essa importação
+import 'dart:convert';
+import 'dart:io';  // Para usar Platform
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;  // Para fazer requisições HTTP
+import 'package:url_launcher/url_launcher.dart';
 import 'package:btc_for_all/screens/price_screen.dart';
 import 'package:btc_for_all/screens/news_screen.dart';
 import 'package:btc_for_all/screens/charts_screen.dart';
@@ -7,10 +10,10 @@ import 'package:btc_for_all/screens/links_screen.dart';
 import 'package:btc_for_all/screens/about_screen.dart';
 import 'package:btc_for_all/screens/conversor_de_criptomoeda.dart';
 import 'package:btc_for_all/screens/calculadora_de_transacoes.dart';
-import 'package:btc_for_all/screens/historico_de_transacoes.dart'; // Importe o histórico de transações
-import 'package:btc_for_all/screens/estatisticas_de_rede.dart'; // Importar o novo widget
+import 'package:btc_for_all/screens/historico_de_transacoes.dart';
+import 'package:btc_for_all/screens/estatisticas_de_rede.dart';
 import 'package:btc_for_all/screens/simulador_de_investimento.dart';
-import 'package:window_manager/window_manager.dart'; // Importe o simulador
+import 'package:window_manager/window_manager.dart';  // Para controle de janelas no desktop
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +46,44 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.light;
+  String _currentVersion = '0.0.2';  // Versão atual do app
+  String? _latestVersion;
+  String? _updateUrl;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkForUpdates();  // Verifica por atualizações ao iniciar o app
+  }
+
+  Future<void> _checkForUpdates() async {
+    const String releasesUrl = 'https://api.github.com/repos/Master-Leodin/btc_for_all/releases/latest';
+    try {
+      final response = await http.get(Uri.parse(releasesUrl));
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final latestVersion = data['tag_name'];
+        final assets = data['assets'];
+        if (latestVersion != _currentVersion) {
+          setState(() {
+            _latestVersion = latestVersion;
+            // Encontrar o link da plataforma correta (Windows, Linux ou Android)
+            if (Platform.isWindows) {
+              _updateUrl = assets.firstWhere((asset) => asset['name'].contains('.exe'))['browser_download_url'];
+            } else if (Platform.isLinux) {
+              _updateUrl = assets.firstWhere((asset) => asset['name'].contains('.AppImage'))['browser_download_url'];
+            } else if (Platform.isAndroid) {
+              _updateUrl = assets.firstWhere((asset) => asset['name'].contains('.apk'))['browser_download_url'];
+            }
+          });
+        }
+      } else {
+        throw Exception('Falha ao verificar por atualizações');
+      }
+    } catch (e) {
+      print('Erro ao checar atualizações: $e');
+    }
+  }
 
   void _toggleTheme() {
     setState(() {
@@ -74,15 +115,17 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       themeMode: _themeMode,
-      home: MyHomePage(toggleTheme: _toggleTheme),
+      home: MyHomePage(toggleTheme: _toggleTheme, latestVersion: _latestVersion, updateUrl: _updateUrl),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   final VoidCallback toggleTheme;
+  final String? latestVersion;
+  final String? updateUrl;
 
-  const MyHomePage({super.key, required this.toggleTheme});
+  const MyHomePage({super.key, required this.toggleTheme, this.latestVersion, this.updateUrl});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -100,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'Sobre o App',
     'Conversor de Criptomoeda',
     'Calculadora de Transações',
-    'Histórico de Transações', // Título para a aba de histórico de transações
+    'Histórico de Transações',
     'Estatísticas de Rede',
     'Simulador de Investimento',
   ];
@@ -115,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const CalculadoraDeTransacoes(),
     const HistoricoDeTransacoes(),
     const EstatisticasDeRede(),
-    const SimuladorDeInvestimento(),  // Agora usando o widget de Simulador de Investimento
+    const SimuladorDeInvestimento(),
   ];
 
   @override
@@ -130,6 +173,13 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: const Icon(Icons.brightness_6),
               onPressed: widget.toggleTheme,
             ),
+            if (widget.latestVersion != null)
+              IconButton(
+                icon: const Icon(Icons.system_update),
+                onPressed: () {
+                  _showUpdateDialog(context);
+                },
+              ),
           ],
           bottom: TabBar(
             onTap: (index) {
@@ -141,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
             tabs: const [
               Tab(icon: Icon(Icons.swap_horizontal_circle), text: 'Conversor de Criptomoeda'),
               Tab(icon: Icon(Icons.calculate), text: 'Calculadora de Transações'),
-              Tab(icon: Icon(Icons.history), text: 'Histórico de Transações'), // Aba de histórico
+              Tab(icon: Icon(Icons.history), text: 'Histórico de Transações'),
               Tab(icon: Icon(Icons.bar_chart), text: 'Estatísticas de Rede'),
               Tab(icon: Icon(Icons.pie_chart), text: 'Simulador de Investimento'),
             ],
@@ -173,6 +223,32 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showUpdateDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Atualização Disponível'),
+          content: const Text('Uma nova versão está disponível para download. Deseja atualizar agora?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancelar'),
+            ),
+            TextButton(
+              onPressed: () {
+                if (widget.updateUrl != null) {
+                  launchUrl(Uri.parse(widget.updateUrl!));
+                }
+              },
+              child: const Text('Atualizar'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
