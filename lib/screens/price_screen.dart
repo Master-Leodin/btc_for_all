@@ -35,14 +35,29 @@ class _PriceScreenState extends State<PriceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text('Preço atual do BTC:', style: TextStyle(fontSize: 24)),
-          Text(_price, style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold)),
-        ],
-      ),
+    return Stack(
+      children: [
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Preço atual do BTC:', style: TextStyle(fontSize: 24)),
+              Text(_price, style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold)),
+            ],
+          ),
+        ),
+        Positioned(
+          bottom: 10,
+          right: 10,
+          child: Text(
+            'Versão 0.0.4 Beta Fracassado',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.grey[400], // Cinza claro
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

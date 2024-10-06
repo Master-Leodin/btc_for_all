@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:io';  // Para usar Platform
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;  // Para fazer requisições HTTP
+import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:btc_for_all/screens/price_screen.dart';
 import 'package:btc_for_all/screens/news_screen.dart';
@@ -13,7 +13,10 @@ import 'package:btc_for_all/screens/calculadora_de_transacoes.dart';
 import 'package:btc_for_all/screens/historico_de_transacoes.dart';
 import 'package:btc_for_all/screens/estatisticas_de_rede.dart';
 import 'package:btc_for_all/screens/simulador_de_investimento.dart';
-import 'package:window_manager/window_manager.dart';  // Para controle de janelas no desktop
+import 'package:window_manager/window_manager.dart';
+import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:archive/archive_io.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,42 +49,89 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.light;
-  String _currentVersion = '0.0.2';  // Versão atual do app
+  String _currentVersion = 'BTC for All 0.0.3';
   String? _latestVersion;
   String? _updateUrl;
 
   @override
   void initState() {
     super.initState();
-    _checkForUpdates();  // Verifica por atualizações ao iniciar o app
+    checkForUpdates();
   }
 
-  Future<void> _checkForUpdates() async {
-    const String releasesUrl = 'https://api.github.com/repos/Master-Leodin/btc_for_all/releases/latest';
+  Future<void> checkForUpdates() async {
     try {
-      final response = await http.get(Uri.parse(releasesUrl));
+      final response = await http.get(
+        Uri.parse('https://api.github.com/repos/Master-Leodin/btc_for_all/releases/latest'),
+      );
+
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        final latestVersion = data['tag_name'];
-        final assets = data['assets'];
-        if (latestVersion != _currentVersion) {
+        String latestVersion = data['tag_name'];
+        var assets = data['assets'];
+
+        var asset = assets.firstWhere(
+              (asset) => asset['name'].toString().contains('btc_for_all'),
+          orElse: () => null,
+        );
+
+        if (asset != null) {
+          String downloadUrl = asset['browser_download_url'];
           setState(() {
             _latestVersion = latestVersion;
-            // Encontrar o link da plataforma correta (Windows, Linux ou Android)
-            if (Platform.isWindows) {
-              _updateUrl = assets.firstWhere((asset) => asset['name'].contains('.exe'))['browser_download_url'];
-            } else if (Platform.isLinux) {
-              _updateUrl = assets.firstWhere((asset) => asset['name'].contains('.AppImage'))['browser_download_url'];
-            } else if (Platform.isAndroid) {
-              _updateUrl = assets.firstWhere((asset) => asset['name'].contains('.apk'))['browser_download_url'];
-            }
+            _updateUrl = downloadUrl;
           });
         }
       } else {
-        throw Exception('Falha ao verificar por atualizações');
+        print('Erro ao checar atualizações: Código ${response.statusCode}');
       }
     } catch (e) {
       print('Erro ao checar atualizações: $e');
+    }
+  }
+
+  Future<void> _downloadAndUpdate(String url) async {
+    try {
+      var dio = Dio();
+      Directory tempDir = await getTemporaryDirectory();
+      String tempPath = tempDir.path;
+      String zipFilePath = '$tempPath/btc_for_all_update.zip';
+
+      await dio.download(url, zipFilePath);
+      await _unzipFile(zipFilePath, tempPath);
+      await _replaceFiles(tempPath);
+    } catch (e) {
+      print('Erro ao atualizar: $e');
+    }
+  }
+
+  Future<void> _unzipFile(String zipFilePath, String outputPath) async {
+    final bytes = File(zipFilePath).readAsBytesSync();
+    final archive = ZipDecoder().decodeBytes(bytes);
+
+    for (var file in archive) {
+      final filename = '$outputPath/${file.name}';
+      if (file.isFile) {
+        final data = file.content as List<int>;
+        File(filename)
+          ..createSync(recursive: true)
+          ..writeAsBytesSync(data);
+      } else {
+        Directory(filename).create(recursive: true);
+      }
+    }
+  }
+
+  Future<void> _replaceFiles(String tempPath) async {
+    Directory appDir = await getApplicationDocumentsDirectory();
+    String appPath = appDir.path;
+
+    Directory tempDir = Directory(tempPath);
+    await for (var entity in tempDir.list(recursive: true)) {
+      if (entity is File) {
+        String newPath = entity.path.replaceFirst(tempPath, appPath);
+        entity.copySync(newPath);
+      }
     }
   }
 
@@ -115,7 +165,11 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       themeMode: _themeMode,
-      home: MyHomePage(toggleTheme: _toggleTheme, latestVersion: _latestVersion, updateUrl: _updateUrl),
+      home: MyHomePage(
+        toggleTheme: _toggleTheme,
+        latestVersion: _latestVersion,
+        updateUrl: _updateUrl,
+      ),
     );
   }
 }
@@ -125,7 +179,12 @@ class MyHomePage extends StatefulWidget {
   final String? latestVersion;
   final String? updateUrl;
 
-  const MyHomePage({super.key, required this.toggleTheme, this.latestVersion, this.updateUrl});
+  const MyHomePage({
+    super.key,
+    required this.toggleTheme,
+    this.latestVersion,
+    this.updateUrl,
+  });
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -204,23 +263,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: _tabs[_currentBottomIndex >= 0 ? _currentBottomIndex : _currentTopIndex + 5],
         bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _currentBottomIndex >= 0 ? _currentBottomIndex : 0,
-          onTap: (int index) {
+          currentIndex: _currentBottomIndex,
+          onTap: (index) {
             setState(() {
               _currentBottomIndex = index;
               _currentTopIndex = -1;
             });
           },
-          selectedItemColor: Colors.grey,
-          unselectedItemColor: Colors.grey,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.monetization_on), label: 'Preço'),
-            BottomNavigationBarItem(icon: Icon(Icons.insert_chart), label: 'Gráficos'),
-            BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'Notícias'),
-            BottomNavigationBarItem(icon: Icon(Icons.link), label: 'Links. Ganhe Satoshis'),
-            BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Sobre e Doações'),
+            BottomNavigationBarItem(icon: Icon(Icons.attach_money), label: 'Preço do Bitcoin'),
+            BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: 'Gráficos'),
+            BottomNavigationBarItem(icon: Icon(Icons.article), label: 'Notícias'),
+            BottomNavigationBarItem(icon: Icon(Icons.link), label: 'Links Úteis'),
+            BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Sobre o App'),
           ],
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );
@@ -231,20 +289,29 @@ class _MyHomePageState extends State<MyHomePage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Atualização Disponível'),
-          content: const Text('Uma nova versão está disponível para download. Deseja atualizar agora?'),
+          title: const Text('Checagem de versão disponível'),
+          content: Text(
+              'A Última versão (${widget.latestVersion}) está disponível.\n'
+                  'Deseja baixar agora?\n'
+                  'Confira na aba do valor do BTC a versão atual, se for\n'
+                  'abaixo da mostrada aqui, baixe clicando em "sim" e\n'
+                  'descompacte na pasta do aplicativo, se for no Android,\n'
+                  'baixe e somente clique no APK para atualizar'),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Cancelar'),
+              child: const Text('Não'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
             TextButton(
+              child: const Text('Sim'),
               onPressed: () {
+                Navigator.of(context).pop();
                 if (widget.updateUrl != null) {
                   launchUrl(Uri.parse(widget.updateUrl!));
                 }
               },
-              child: const Text('Atualizar'),
             ),
           ],
         );
