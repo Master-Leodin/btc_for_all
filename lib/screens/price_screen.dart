@@ -50,7 +50,7 @@ class _PriceScreenState extends State<PriceScreen> {
           bottom: 10,
           right: 10,
           child: Text(
-            'Versão 0.0.4 Beta Fracassado',
+            'Versão 0.0.5 Beta Fracassado',
             style: TextStyle(
               fontSize: 12,
               color: Colors.grey[400], // Cinza claro

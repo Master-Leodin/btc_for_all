@@ -1,15 +1,3 @@
-buildscript {
-    ext.kotlin_version = '1.8.0' // Versão do Kotlin
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:8.0.2" // Atualize para a versão mais recente
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // Plugin Kotlin
-    }
-}
-
 allprojects {
     repositories {
         google()

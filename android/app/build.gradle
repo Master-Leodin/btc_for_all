@@ -43,9 +43,3 @@ flutter {
     source = "../.."
 }
 
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.13.1' // Atualize conforme a versão do Kotlin
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.6' // Certifique-se que todas as dependências são compatíveis
-    // Outras dependências...
-}
