@@ -22,6 +22,7 @@ class _SimuladorDeInvestimentoState extends State<SimuladorDeInvestimento> {
   // Função para buscar o preço atual do Bitcoin usando a API CoinGecko
   Future<void> _fetchBitcoinPrice() async {
     try {
+      // Tentativa com CoinGecko
       final url = Uri.parse('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
       final response = await http.get(url);
       if (response.statusCode == 200) {
@@ -30,37 +31,92 @@ class _SimuladorDeInvestimentoState extends State<SimuladorDeInvestimento> {
           _btcPriceNowUsd = (data['bitcoin']['usd'] as num).toDouble();  // Preço atual do BTC em USD
         });
       } else {
-        setState(() {
-          _errorMessage = 'Erro ao buscar o preço atual do Bitcoin';
-        });
+        throw Exception('Erro ao buscar o preço do Bitcoin na CoinGecko.');
       }
     } catch (e) {
-      setState(() {
-        _errorMessage = 'Erro ao buscar o preço atual do Bitcoin: $e';
-      });
+      // Caso falhe na CoinGecko, tenta com a CoinCap
+      try {
+        final fallbackUrl = Uri.parse('https://api.coincap.io/v2/assets/bitcoin');
+        final fallbackResponse = await http.get(fallbackUrl);
+        if (fallbackResponse.statusCode == 200) {
+          final fallbackData = json.decode(fallbackResponse.body);
+          setState(() {
+            _btcPriceNowUsd = (fallbackData['data']['priceUsd'] as num).toDouble();  // Preço atual do BTC em USD
+          });
+        } else {
+          setState(() {
+            _errorMessage = 'Erro ao buscar o preço do Bitcoin na CoinCap.';
+          });
+        }
+      } catch (fallbackError) {
+        setState(() {
+          _errorMessage = 'Erro ao buscar o preço atual do Bitcoin: $e';
+        });
+      }
     }
   }
 
-  // Função para calcular o preço do BTC na data de investimento usando CoinGecko (apenas USD)
   Future<void> _fetchBtcPriceAtInvestment() async {
     if (_investmentDate == null) return;
 
     final formattedDate = DateFormat('dd-MM-yyyy').format(_investmentDate!);  // Formato necessário para a API
 
     try {
-      final url = Uri.parse(
-          'https://api.coingecko.com/api/v3/coins/bitcoin/history?date=$formattedDate');
+      // Tenta buscar os dados pela API do CoinGecko
+      final url = Uri.parse('https://api.coingecko.com/api/v3/coins/bitcoin/history?date=$formattedDate');
       final response = await http.get(url);
+
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        final marketData = data['market_data'];
 
-        setState(() {
-          _btcPriceAtInvestment = (marketData['current_price']['usd'] as num).toDouble();  // Preço em USD
-        });
+        // Verifica se há 'market_data' e o preço atual para USD
+        if (data.containsKey('market_data') && data['market_data'].containsKey('current_price')) {
+          final marketData = data['market_data'];
+
+          setState(() {
+            _btcPriceAtInvestment = (marketData['current_price']['usd'] as num).toDouble();
+          });
+        } else {
+          // Se os dados não estiverem disponíveis, tenta a segunda API
+          await _fetchBtcPriceFromAlternativeApi();
+        }
+      } else {
+        // Se a resposta da CoinGecko falhar, tenta a segunda API
+        await _fetchBtcPriceFromAlternativeApi();
+      }
+    } catch (e) {
+      // Caso ocorra um erro, tenta buscar pela segunda API
+      await _fetchBtcPriceFromAlternativeApi();
+    }
+  }
+
+  Future<void> _fetchBtcPriceFromAlternativeApi() async {
+    try {
+      // Formata a data de investimento no formato necessário
+      final formattedDate = DateFormat('yyyy-MM-dd').format(_investmentDate!);
+
+      // Tenta buscar os dados pela API da CoinBase
+      final fallbackUrl = Uri.parse(
+          'https://api.coinbase.com/v2/prices/BTC-USD/spot?date=$formattedDate'
+      );
+
+      final response = await http.get(fallbackUrl);
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+
+        if (data.containsKey('data') && data['data'].containsKey('amount')) {
+          setState(() {
+            _btcPriceAtInvestment = double.parse(data['data']['amount']);
+          });
+        } else {
+          setState(() {
+            _errorMessage = 'Nenhuma API conseguiu buscar o preço do Bitcoin para esta data.';
+          });
+        }
       } else {
         setState(() {
-          _errorMessage = 'Erro ao buscar o preço do Bitcoin na data de investimento.';
+          _errorMessage = 'Nenhuma API conseguiu buscar o preço do Bitcoin para esta data.';
         });
       }
     } catch (e) {
