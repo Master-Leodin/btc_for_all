@@ -1,16 +1,13 @@
 # btc_for_all
 
-A new Flutter project.
+Programa para facilitar a vida de quem curte, trabalha ou é curioso com o bitcoin.
+Feito em flutter para Windows, Android e futuramente, Linux.
+Livre para dar ideias ou contribuir.
 
-## Getting Started
+O release para Windows:
 
-This project is a starting point for a Flutter application.
+https://youtu.be/UC_4YLIXvWQ
 
-A few resources to get you started if this is your first Flutter project:
+O release para Android:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://youtu.be/kO5ErSIoNyY
