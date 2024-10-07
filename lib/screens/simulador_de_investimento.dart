@@ -90,6 +90,7 @@ class _SimuladorDeInvestimentoState extends State<SimuladorDeInvestimento> {
     }
   }
 
+
   Future<void> _fetchBtcPriceFromAlternativeApi() async {
     try {
       // Formata a data de investimento no formato necessário
