@@ -16,3 +16,6 @@ https://youtu.be/UC_4YLIXvWQ
 O release para Android:
 
 https://youtu.be/kO5ErSIoNyY
+
+Irei abrir um canal exclusivo para isso, por enquanto está no meu canal de viagens,
+por isso não estou enviando toda vez que atualizo (e por usar dados móveis)
