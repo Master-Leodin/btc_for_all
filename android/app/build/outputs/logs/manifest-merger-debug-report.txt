@@ -1,0 +1,284 @@
+-- Merging decision tree log ---
+application
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:8:5-40:19
+MERGED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
+MERGED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\0ee49749523ba547f7fcdac37bba2d60\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\0ee49749523ba547f7fcdac37bba2d60\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\59f17fd168380cf6f231cfdd4fa37bc5\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\59f17fd168380cf6f231cfdd4fa37bc5\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+	android:name
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml
+manifest
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:1-52:12
+MERGED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:1-52:12
+MERGED from [:path_provider_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-16:12
+MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\leona\.gradle\caches\transforms-3\1863cced8a0509da231f2a7bf29b2f9c\transformed\fragment-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\leona\.gradle\caches\transforms-3\97236e209a207774b55c4166325eeb21\transformed\jetified-activity-1.8.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\07a5032fa9cff6c47350cdb2c4ce9c98\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\leona\.gradle\caches\transforms-3\8549a19e540e64046cf1dcf34653fe5e\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\leona\.gradle\caches\transforms-3\17fcf8247217ab88c44fd40d7beeac38\transformed\browser-1.8.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.window:window-java:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\87eaa8b0300a486b13b02e7b6bee201b\transformed\jetified-window-java-1.2.0\AndroidManifest.xml:17:1-21:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\105f6647afe040aba45871e023c54c98\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\96b51236d74558ad5e3d2f1b18c1a614\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\ec2a322197bfff812a1ff870f8c2179a\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\06c7ea282cd87805bb981686d64a95d4\transformed\jetified-lifecycle-runtime-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\125eec91e3cc0a7a095d1eb0394e6a58\transformed\jetified-lifecycle-viewmodel-savedstate-2.8.6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\596ff1532c57e8cc204b74ed18d07d01\transformed\lifecycle-viewmodel-2.8.6\AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\82f9cdeedb9932896657fa17da198114\transformed\jetified-lifecycle-viewmodel-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\50dbcc4e4fc6427cdfc2263ac43aa3ea\transformed\lifecycle-livedata-core-2.8.6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\f7c1013dbf736e73269f52f0380c677d\transformed\jetified-lifecycle-runtime-ktx-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\6a893d43279e590c2ee87ed5ed3c8ff3\transformed\jetified-lifecycle-livedata-core-ktx-2.8.6\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\81bd07eeb1f68de3d23480716c9d6f78\transformed\lifecycle-livedata-2.8.6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\44df19c6c1fd17a081ef86eb349d7b0c\transformed\jetified-lifecycle-livedata-ktx-2.8.6\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\7b5cd01860648970e8df5000d505bf1e\transformed\jetified-lifecycle-viewmodel-ktx-2.8.6\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\0ee49749523ba547f7fcdac37bba2d60\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\9352bca21eec14fc177296d670667a67\transformed\jetified-tracing-1.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\d588febc55587925cc698634f85b8044\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\59f17fd168380cf6f231cfdd4fa37bc5\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\leona\.gradle\caches\transforms-3\4114414c9955dc63fe5be6ceb377bc56\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.window.extensions.core:core:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\8083f2f0729043d753500b2182303a94\transformed\jetified-core-1.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\leona\.gradle\caches\transforms-3\cf92bc7ba154d8d241e4b6c7b5ec273f\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+	package
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:3:5-67
+MERGED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:3:5-67
+MERGED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:3:5-67
+	android:name
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:3:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:4:5-79
+	android:name
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:4:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:5:5-76
+	android:name
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:5:22-73
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:6:22-76
+queries
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:46:5-51:15
+intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:47:9-50:18
+action#android.intent.action.PROCESS_TEXT
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:48:13-72
+	android:name
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:48:21-70
+data
+ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:49:13-50
+	android:mimeType
+		ADDED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml:49:19-48
+uses-sdk
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml
+MERGED from [:path_provider_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\leona\.gradle\caches\transforms-3\1863cced8a0509da231f2a7bf29b2f9c\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\leona\.gradle\caches\transforms-3\1863cced8a0509da231f2a7bf29b2f9c\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\leona\.gradle\caches\transforms-3\97236e209a207774b55c4166325eeb21\transformed\jetified-activity-1.8.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\leona\.gradle\caches\transforms-3\97236e209a207774b55c4166325eeb21\transformed\jetified-activity-1.8.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\07a5032fa9cff6c47350cdb2c4ce9c98\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\07a5032fa9cff6c47350cdb2c4ce9c98\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\leona\.gradle\caches\transforms-3\8549a19e540e64046cf1dcf34653fe5e\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\leona\.gradle\caches\transforms-3\8549a19e540e64046cf1dcf34653fe5e\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\leona\.gradle\caches\transforms-3\17fcf8247217ab88c44fd40d7beeac38\transformed\browser-1.8.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\leona\.gradle\caches\transforms-3\17fcf8247217ab88c44fd40d7beeac38\transformed\browser-1.8.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window-java:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\87eaa8b0300a486b13b02e7b6bee201b\transformed\jetified-window-java-1.2.0\AndroidManifest.xml:19:5-44
+MERGED from [androidx.window:window-java:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\87eaa8b0300a486b13b02e7b6bee201b\transformed\jetified-window-java-1.2.0\AndroidManifest.xml:19:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\105f6647afe040aba45871e023c54c98\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\105f6647afe040aba45871e023c54c98\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\96b51236d74558ad5e3d2f1b18c1a614\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\96b51236d74558ad5e3d2f1b18c1a614\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\ec2a322197bfff812a1ff870f8c2179a\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\ec2a322197bfff812a1ff870f8c2179a\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\06c7ea282cd87805bb981686d64a95d4\transformed\jetified-lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\06c7ea282cd87805bb981686d64a95d4\transformed\jetified-lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\125eec91e3cc0a7a095d1eb0394e6a58\transformed\jetified-lifecycle-viewmodel-savedstate-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\125eec91e3cc0a7a095d1eb0394e6a58\transformed\jetified-lifecycle-viewmodel-savedstate-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\596ff1532c57e8cc204b74ed18d07d01\transformed\lifecycle-viewmodel-2.8.6\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\596ff1532c57e8cc204b74ed18d07d01\transformed\lifecycle-viewmodel-2.8.6\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\82f9cdeedb9932896657fa17da198114\transformed\jetified-lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\82f9cdeedb9932896657fa17da198114\transformed\jetified-lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\50dbcc4e4fc6427cdfc2263ac43aa3ea\transformed\lifecycle-livedata-core-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\50dbcc4e4fc6427cdfc2263ac43aa3ea\transformed\lifecycle-livedata-core-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\f7c1013dbf736e73269f52f0380c677d\transformed\jetified-lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\f7c1013dbf736e73269f52f0380c677d\transformed\jetified-lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\6a893d43279e590c2ee87ed5ed3c8ff3\transformed\jetified-lifecycle-livedata-core-ktx-2.8.6\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\6a893d43279e590c2ee87ed5ed3c8ff3\transformed\jetified-lifecycle-livedata-core-ktx-2.8.6\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\81bd07eeb1f68de3d23480716c9d6f78\transformed\lifecycle-livedata-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\81bd07eeb1f68de3d23480716c9d6f78\transformed\lifecycle-livedata-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\44df19c6c1fd17a081ef86eb349d7b0c\transformed\jetified-lifecycle-livedata-ktx-2.8.6\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\44df19c6c1fd17a081ef86eb349d7b0c\transformed\jetified-lifecycle-livedata-ktx-2.8.6\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\7b5cd01860648970e8df5000d505bf1e\transformed\jetified-lifecycle-viewmodel-ktx-2.8.6\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\7b5cd01860648970e8df5000d505bf1e\transformed\jetified-lifecycle-viewmodel-ktx-2.8.6\AndroidManifest.xml:5:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\0ee49749523ba547f7fcdac37bba2d60\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\0ee49749523ba547f7fcdac37bba2d60\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\9352bca21eec14fc177296d670667a67\transformed\jetified-tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\9352bca21eec14fc177296d670667a67\transformed\jetified-tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\d588febc55587925cc698634f85b8044\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\d588febc55587925cc698634f85b8044\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\59f17fd168380cf6f231cfdd4fa37bc5\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\59f17fd168380cf6f231cfdd4fa37bc5\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\leona\.gradle\caches\transforms-3\4114414c9955dc63fe5be6ceb377bc56\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\leona\.gradle\caches\transforms-3\4114414c9955dc63fe5be6ceb377bc56\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.window.extensions.core:core:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\8083f2f0729043d753500b2182303a94\transformed\jetified-core-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.window.extensions.core:core:1.0.0] C:\Users\leona\.gradle\caches\transforms-3\8083f2f0729043d753500b2182303a94\transformed\jetified-core-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\leona\.gradle\caches\transforms-3\cf92bc7ba154d8d241e4b6c7b5ec273f\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\leona\.gradle\caches\transforms-3\cf92bc7ba154d8d241e4b6c7b5ec273f\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\leona\AndroidStudioProjects\btc_for_all\android\app\src\debug\AndroidManifest.xml
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] C:\Users\leona\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.10\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+	android:required
+		ADDED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.window:window:1.2.0] C:\Users\leona\.gradle\caches\transforms-3\62c9ac49591c6c2c8ceefed658c05b87\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+permission#com.btcforall.btc_for_all.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+uses-permission#com.btcforall.btc_for_all.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\leona\.gradle\caches\transforms-3\5d2c92cc3c9d07e1a7e9dd212c5643eb\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\0ee49749523ba547f7fcdac37bba2d60\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\leona\.gradle\caches\transforms-3\0ee49749523ba547f7fcdac37bba2d60\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:25:13-67
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\leona\.gradle\caches\transforms-3\9f7eca010280abc686773348f9c4742e\transformed\jetified-lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\leona\.gradle\caches\transforms-3\7719343758d04562bf81f9e37e45a024\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92

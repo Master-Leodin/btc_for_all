@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:url_launcher/url_launcher.dart';
 import 'package:btc_for_all/screens/price_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:btc_for_all/screens/news_screen.dart';
 import 'package:btc_for_all/screens/charts_screen.dart';
 import 'package:btc_for_all/screens/links_screen.dart';
@@ -148,28 +148,13 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         brightness: Brightness.light,
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          selectedLabelStyle: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.bold,
-            height: 1.5,
-          ),
-          unselectedLabelStyle: TextStyle(
-            fontSize: 12,
-            height: 1.5,
-          ),
-        ),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.blue,
       ),
       themeMode: _themeMode,
-      home: MyHomePage(
-        toggleTheme: _toggleTheme,
-        latestVersion: _latestVersion,
-        updateUrl: _updateUrl,
-      ),
+      home: MyHomePage(toggleTheme: _toggleTheme),
     );
   }
 }
@@ -197,12 +182,12 @@ class _MyHomePageState extends State<MyHomePage> {
     const ChartsScreen(),
     const NewsScreen(),
     const LinksScreen(),
-    const AboutScreen(),
     const ConversorDeCriptomoeda(),
     const CalculadoraDeTransacoes(),
     const HistoricoDeTransacoes(),
     const EstatisticasDeRede(),
     const SimuladorDeInvestimento(),
+    const AboutScreen(),
   ];
 
   List<String> _titles = [
@@ -210,36 +195,13 @@ class _MyHomePageState extends State<MyHomePage> {
     'Gráficos',
     'Notícias',
     'Links Úteis e Ganhe Satoshis',
-    'Sobre o App',
     'Conversor de Criptomoeda',
     'Calculadora de Transações',
     'Histórico de Transações',
     'Estatísticas de Rede',
     'Simulador de Investimento',
+    'Sobre o App',
   ];
-
-  List<BottomNavigationBarItem> _bottomNavBarItems = [
-    BottomNavigationBarItem(icon: Icon(Icons.attach_money), label: 'Preço do Bitcoin'),
-    BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: 'Gráficos'),
-    BottomNavigationBarItem(icon: Icon(Icons.article), label: 'Notícias'),
-    BottomNavigationBarItem(icon: Icon(Icons.link), label: 'Links Úteis'),
-    BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Sobre o App'),
-    BottomNavigationBarItem(icon: Icon(Icons.swap_horizontal_circle), label: 'Conversor de Criptomoeda'),
-    BottomNavigationBarItem(icon: Icon(Icons.calculate), label: 'Calculadora de Transações'),
-    BottomNavigationBarItem(icon: Icon(Icons.history), label: 'Histórico de Transações'),
-    BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Estatísticas de Rede'),
-    BottomNavigationBarItem(icon: Icon(Icons.pie_chart), label: 'Simulador de Investimento'),
-  ];
-
-  int _getValidIndex() {
-    if (_currentIndex >= 0 && _currentIndex < 5) {
-      return _currentIndex;
-    } else if (_currentIndex >= 5 && _currentIndex < 10) {
-      return _currentIndex - 5;
-    } else {
-      return 0; // Retorne um valor padrão se ambos estiverem inválidos
-    }
-  }
 
   void _showUpdateDialog(BuildContext context) {
     showDialog(
@@ -265,7 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text('Sim'),
               onPressed: () {
                 Navigator.of(context).pop();
-                if (widget.updateUrl != null) {
+                if (widget.updateUrl!= null) {
                   launchUrl(Uri.parse(widget.updateUrl!));
                 }
               },
@@ -278,65 +240,126 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 5,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(_titles[_getValidIndex()]),
-          actions: [
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_titles[_currentIndex]),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_6),
+            onPressed: widget.toggleTheme,
+          ),
+          if (!Platform.isAndroid && widget.latestVersion!= null)
             IconButton(
-              icon: const Icon(Icons.brightness_6),
-              onPressed: widget.toggleTheme,
+              icon: const Icon(Icons.system_update),
+              onPressed: () {
+                _showUpdateDialog(context);
+              },
             ),
-            if (widget.latestVersion != null)
-              IconButton(
-                icon: const Icon(Icons.system_update),
-                onPressed: () {
-                  _showUpdateDialog(context);
-                },
-              ),
+          Builder(
+            builder: (context) => IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            ),
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              title: const Text('Preço do Bitcoin'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 0;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Gráficos'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 1;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Notícias'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 2;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Links Úteis e Ganhe Satoshis'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 3;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Conversor de Criptomoeda'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 4;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Calculadora de Transações'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 5;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Histórico de Transações'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 6;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Estatísticas de Rede'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 7;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Simulador de Investimento'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 8;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Sobre o App'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 9;
+                });
+                Navigator.pop(context);
+              },
+            ),
           ],
-          bottom: TabBar(
-            onTap: (index) {
-              setState(() {
-                _currentIndex = index + 5; // Adiciona 5 ao índice para corresponder aos itens do BottomNavigationBar
-              });
-            },
-            tabs: const [
-              Tab(icon: Icon(Icons.swap_horizontal_circle), text: 'Conversor de Criptomoeda'),
-              Tab(icon: Icon(Icons.calculate), text: 'Calculadora de Transações'),
-              Tab(icon: Icon(Icons.history), text: 'Histórico de Transações'),
-              Tab(icon: Icon(Icons.bar_chart), text: 'Estatísticas de Rede'),
-              Tab(icon: Icon(Icons.pie_chart), text: 'Simulador de Investimento'),
-            ],
-            labelStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-            unselectedLabelStyle: const TextStyle(fontSize: 12),
-            indicator: const BoxDecoration(),
-            labelColor: Colors.grey,
-            unselectedLabelColor: Colors.grey,
-          ),
-        ),
-        body: _screens[_currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _currentIndex % 5,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          items: _bottomNavBarItems.sublist(0, 5),
-          unselectedItemColor: Colors.grey.shade600,
-          showUnselectedLabels: true,
-          unselectedLabelStyle: TextStyle(
-            color: Colors.grey.shade600,
-            fontSize: 12,
-          ),
-          selectedLabelStyle: TextStyle(
-            fontSize: 12,
-          ),
         ),
       ),
+      body: _screens[_currentIndex],
     );
   }
 }
