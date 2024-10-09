@@ -1,16 +1,21 @@
 # btc_for_all
 
-A new Flutter project.
+ATENÇÃO:
+IREI REESCREVER A APLICAÇÃO EM RUST
 
-## Getting Started
+Programa para facilitar a vida de quem curte, trabalha ou é curioso com o bitcoin.
+Feito em flutter para Windows, Android e futuramente, Linux.
+Livre para dar ideias ou contribuir.
 
-This project is a starting point for a Flutter application.
+Ele te dá o valor atual do BTC, faz conversóes de BTC/BRL, BTC/USD e o contrário.
+Verifica a dificuldade de mineração, estatísticas de rede, histórico de transações,
+links úteis, sites de notícias, simulador de investimentos,
+gráfico da rede, valor de transferência na rede onchain, etc.
 
-A few resources to get you started if this is your first Flutter project:
+O release para Windows:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+https://youtu.be/UC_4YLIXvWQ
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+O release para Android:
+
+https://youtu.be/kO5ErSIoNyY
