@@ -33,5 +33,6 @@ flutter:
   assets:
     - assets/images/38.png
     - assets/images/pix.jpg
+    - assets/images/btcmap.png
 
   uses-material-design: true

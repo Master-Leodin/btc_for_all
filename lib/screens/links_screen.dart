@@ -10,6 +10,11 @@ class LinksScreen extends StatelessWidget {
       'url': 'https://linktr.ee/r38tao',
       'image': 'assets/images/38.png',
     },
+    {
+      'title': 'BTC Map\nVeja onde gastar Bitcoin',
+      'url': 'https://btcmap.org',
+      'image': 'assets/images/btcmap.png',
+    },
   ];
 
   Future<void> _openLink(String url) async {
@@ -24,9 +29,9 @@ class LinksScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Links Úteis'),
       ),
-      body: SingleChildScrollView( // Adicionando o SingleChildScrollView
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
-        child: Column( // Usando Column em vez de ListView.builder
+        child: Column(
           children: links.map((link) {
             return ListTile(
               leading: link['image'] != ''
