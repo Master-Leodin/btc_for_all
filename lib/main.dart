@@ -49,7 +49,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.light;
-  String _currentVersion = 'BTC for All 0.0.3';
+  String _currentVersion = 'BTC for All 0.0.7';
   String? _latestVersion;
   String? _updateUrl;
 
