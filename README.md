@@ -1,8 +1,5 @@
 # btc_for_all
 
-ATENÇÃO:
-IREI REESCREVER A APLICAÇÃO EM RUST
-
 Programa para facilitar a vida de quem curte, trabalha ou é curioso com o bitcoin.
 Feito em flutter para Windows, Android e futuramente, Linux.
 Livre para dar ideias ou contribuir.
@@ -19,3 +16,6 @@ https://youtu.be/UC_4YLIXvWQ
 O release para Android:
 
 https://youtu.be/kO5ErSIoNyY
+
+Irei abrir um canal exclusivo para isso, por enquanto está no meu canal de viagens,
+por isso não estou enviando toda vez que atualizo (e por usar dados móveis)
