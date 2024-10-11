@@ -13,6 +13,7 @@ class _ConversorDeCriptomoedaState extends State<ConversorDeCriptomoeda> {
   final TextEditingController _controller = TextEditingController();
   double _convertedValueBRL = 0.0;
   double _convertedValueUSD = 0.0;
+  double _convertedValueSats = 0.0;
   double _btcValueUSD = 0.0;
   double _btcValueBRL = 0.0;
   String _selectedCurrency = 'real'; // Define a moeda padrão como BRL (Real)
@@ -62,6 +63,7 @@ class _ConversorDeCriptomoedaState extends State<ConversorDeCriptomoeda> {
       setState(() {
         _convertedValueBRL = 0.0;
         _convertedValueUSD = 0.0;
+        _convertedValueSats = 0.0;
       });
       return;
     }
@@ -71,11 +73,14 @@ class _ConversorDeCriptomoedaState extends State<ConversorDeCriptomoeda> {
       setState(() {
         if (_selectedCurrency == 'real') {
           _convertedValueBRL = enteredValue / _btcValueBRL; // Real para BTC
+          _convertedValueSats = (_convertedValueBRL * 100000000); // Real para sats
         } else if (_selectedCurrency == 'usd') {
           _convertedValueUSD = enteredValue / _btcValueUSD; // USD para BTC
+          _convertedValueSats = (_convertedValueUSD * 100000000); // USD para sats
         } else if (_selectedCurrency == 'btc') {
           _convertedValueBRL = enteredValue * _btcValueBRL; // BTC para BRL
           _convertedValueUSD = enteredValue * _btcValueUSD; // BTC para USD
+          _convertedValueSats = enteredValue * 100000000; // BTC para sats
         }
       });
     } catch (error) {
@@ -148,12 +153,14 @@ class _ConversorDeCriptomoedaState extends State<ConversorDeCriptomoeda> {
               const SizedBox(height: 20),
               _selectedCurrency == 'real'
                   ? SelectableText(
-                'Valor em Bitcoin (texto selecionável): ${_convertedValueBRL.toStringAsFixed(8)} BTC',
+                'Valor em Bitcoin: ${_convertedValueBRL.toStringAsFixed(8)} BTC\n'
+                    'Valor em Satoshis: ${_convertedValueSats.toStringAsFixed(0)} sats',
                 style: const TextStyle(fontSize: 20),
               )
                   : _selectedCurrency == 'usd'
                   ? SelectableText(
-                'Valor em Bitcoin (texto selecionável): ${_convertedValueUSD.toStringAsFixed(8)} BTC',
+                'Valor em Bitcoin: ${_convertedValueUSD.toStringAsFixed(8)} BTC\n'
+                    'Valor em Satoshis: ${_convertedValueSats.toStringAsFixed(0)} sats',
                 style: const TextStyle(fontSize: 20),
               )
                   : Column(
@@ -168,6 +175,11 @@ class _ConversorDeCriptomoedaState extends State<ConversorDeCriptomoeda> {
                     'Valor em USD: ${_convertedValueUSD.toStringAsFixed(2)} USD',
                     style: const TextStyle(fontSize: 20),
                   ),
+                  const SizedBox(height: 10),
+                  SelectableText(
+                    'Valor em Satoshis: ${_convertedValueSats.toStringAsFixed(0)} sats',
+                    style: const TextStyle(fontSize: 20),
+                  ),
                 ],
               ),
               const SizedBox(height: 20),
@@ -179,7 +191,6 @@ class _ConversorDeCriptomoedaState extends State<ConversorDeCriptomoeda> {
           ),
         ),
       ),
-
     );
   }
 }

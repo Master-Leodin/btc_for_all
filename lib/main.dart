@@ -13,6 +13,8 @@ import 'package:btc_for_all/screens/calculadora_de_transacoes.dart';
 import 'package:btc_for_all/screens/historico_de_transacoes.dart';
 import 'package:btc_for_all/screens/estatisticas_de_rede.dart';
 import 'package:btc_for_all/screens/simulador_de_investimento.dart';
+import 'package:btc_for_all/screens/aulas.dart';
+import 'package:btc_for_all/screens/p2p.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:path_provider/path_provider.dart';
@@ -49,7 +51,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.light;
-  String _currentVersion = 'BTC for All 0.0.7';
+  String _currentVersion = 'BTC for All 0.0.9';
   String? _latestVersion;
   String? _updateUrl;
 
@@ -182,6 +184,8 @@ class _MyHomePageState extends State<MyHomePage> {
     const ChartsScreen(),
     const NewsScreen(),
     const LinksScreen(),
+    const AulasScreen(),
+    const P2PScreen(),
     const ConversorDeCriptomoeda(),
     const CalculadoraDeTransacoes(),
     const HistoricoDeTransacoes(),
@@ -195,6 +199,8 @@ class _MyHomePageState extends State<MyHomePage> {
     'Gráficos',
     'Notícias',
     'Links Úteis e Ganhe Satoshis',
+    'Aulas Gratuitas e Mais',
+    'Parcerias P2P',
     'Conversor de Criptomoeda',
     'Calculadora de Transações',
     'Histórico de Transações',
@@ -303,25 +309,26 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
+              title: const Text('Aulas Gratuitas e Mais'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 4; // Índice correspondente à nova tela
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Parcerias P2P'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 5; // Índice correspondente à nova tela
+                });
+                Navigator.pop(context);
+              },
+            ),
+
+            ListTile(
               title: const Text('Conversor de Criptomoeda'),
-              onTap: () {
-                setState(() {
-                  _currentIndex = 4;
-                });
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Calculadora de Transações'),
-              onTap: () {
-                setState(() {
-                  _currentIndex = 5;
-                });
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Histórico de Transações'),
               onTap: () {
                 setState(() {
                   _currentIndex = 6;
@@ -330,7 +337,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('Estatísticas de Rede'),
+              title: const Text('Calculadora de Transações'),
               onTap: () {
                 setState(() {
                   _currentIndex = 7;
@@ -339,7 +346,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('Simulador de Investimento'),
+              title: const Text('Histórico de Transações'),
               onTap: () {
                 setState(() {
                   _currentIndex = 8;
@@ -348,10 +355,28 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('Sobre o App'),
+              title: const Text('Estatísticas de Rede'),
               onTap: () {
                 setState(() {
                   _currentIndex = 9;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Simulador de Investimento'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 10;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Sobre o App'),
+              onTap: () {
+                setState(() {
+                  _currentIndex = 11;
                 });
                 Navigator.pop(context);
               },

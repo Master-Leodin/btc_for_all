@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class LinksScreen extends StatefulWidget {
-  const LinksScreen({super.key});
+class AulasScreen extends StatefulWidget {
+  const AulasScreen({super.key});
 
   @override
-  _LinksScreenState createState() => _LinksScreenState();
+  _AulasScreenState createState() => _AulasScreenState();
 }
 
-class _LinksScreenState extends State<LinksScreen> with SingleTickerProviderStateMixin {
+class _AulasScreenState extends State<AulasScreen> with SingleTickerProviderStateMixin {
   // Animação
   late AnimationController _controller;
   late Animation<Color?> _colorAnimation;
@@ -46,17 +46,13 @@ class _LinksScreenState extends State<LinksScreen> with SingleTickerProviderStat
     super.dispose();
   }
 
-  final List<Map<String, String>> links = const [
+  final List<Map<String, String>> aulas = const [
     {
-      'title': 'Linktree 38Tão\nGanhe satoshis e mais',
-      'url': 'https://linktr.ee/r38tao',
-      'image': 'assets/images/38.png',
+      'title': 'Canal Bitcoinheiros\nAssista ao conteúdo sobre Bitcoin',
+      'url': 'https://www.youtube.com/@Bitcoinheiros',
+      'image': 'assets/images/bitconheiros.png',
     },
-    {
-      'title': 'BTC Map\nVeja onde gastar Bitcoin',
-      'url': 'https://btcmap.org',
-      'image': 'assets/images/btcmap.png',
-    },
+    // Adicione mais links aqui se desejar
   ];
 
   Future<void> _openLink(String url) async {
@@ -69,7 +65,7 @@ class _LinksScreenState extends State<LinksScreen> with SingleTickerProviderStat
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Links Úteis'),
+        title: const Text('Aulas e mais sobre Bitcoin'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -81,7 +77,7 @@ class _LinksScreenState extends State<LinksScreen> with SingleTickerProviderStat
               animation: _controller,
               builder: (context, child) {
                 return Text(
-                  'Faça doações mensais para que seu site apareça aqui, não negocio valores, o que vier é de coração',
+                  'Faça doações mensais para que seu canal apareça aqui, não negocio valores, o que vier é de coração',
                   style: TextStyle(
                     fontSize: 16,
                     fontStyle: FontStyle.italic,
@@ -90,17 +86,17 @@ class _LinksScreenState extends State<LinksScreen> with SingleTickerProviderStat
                 );
               },
             ),
-            const SizedBox(height: 20), // Espaçamento entre a frase e a lista de links
+            const SizedBox(height: 20), // Espaçamento entre a frase e a lista
 
-            // Exibir a lista de links úteis
+            // Exibir a lista de aulas
             Column(
-              children: links.map((link) {
+              children: aulas.map((aula) {
                 return ListTile(
-                  leading: link['image'] != ''
-                      ? Image.asset(link['image']!, width: 80, height: 80)
+                  leading: aula['image'] != ''
+                      ? Image.asset(aula['image']!, width: 80, height: 80)
                       : const Icon(Icons.link),
-                  title: Text(link['title']!),
-                  onTap: () => _openLink(link['url']!),
+                  title: Text(aula['title']!),
+                  onTap: () => _openLink(aula['url']!),
                   trailing: const Icon(Icons.open_in_new),
                 );
               }).toList(),

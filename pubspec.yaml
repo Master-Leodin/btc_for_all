@@ -3,7 +3,7 @@ description: "A new Flutter project."
 
 publish_to: 'none'
 
-version: 0.0.7
+version: 0.0.9
 
 environment:
   sdk: ^3.5.1
@@ -34,5 +34,7 @@ flutter:
     - assets/images/38.png
     - assets/images/pix.jpg
     - assets/images/btcmap.png
+    - assets/images/p2p.png
+    - assets/images/bitconheiros.png
 
   uses-material-design: true
